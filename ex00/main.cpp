@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <deque>
 
 int main() {
 	try {
@@ -14,7 +13,7 @@ int main() {
 		vec.push_back(5);
 
 		std::cout << "Testing vector: ";
-		typename std::vector<int>::iterator it = easyfind(vec, 3);
+		std::vector<int>::iterator it = easyfind(vec, 3);
 		std::cout << "Found value: " << *it << std::endl;
 
 		std::list<int> lst;
@@ -24,11 +23,14 @@ int main() {
 		lst.push_back(40);
 
 		std::cout << "Testing list: ";
-		typename std::list<int>::iterator it2 = easyfind(lst, 20);
+		std::list<int>::iterator it2 = easyfind(lst, 20);
 		std::cout << "Found value: " << *it2 << std::endl;
 
 		std::cout << "Testing not found case: ";
 		easyfind(vec, 99);
+
+		std::cout << "Testing not found case: ";
+		easyfind(lst, 99);
 	}
 	catch (const std::exception& e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;

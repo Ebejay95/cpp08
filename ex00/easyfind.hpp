@@ -5,16 +5,11 @@
 #include <stdexcept>
 
 template <typename T>
-int easyfind(T &array, int n) {
-	int i = 0;
-	for(i = 0 ; i < array.size(); i++)
-	{
-		if (array[i] == n)
-			return (n);
-		if (i == array.size())
-			throw NotFoundException
-	}
-	return (-1);
+typename T::iterator easyfind(T &container, int n) {
+	typename T::iterator it = std::find(container.begin(), container.end(), n);
+	if (it == container.end())
+		throw std::runtime_error("Value not found in container");
+	return it;
 }
 
 #endif
