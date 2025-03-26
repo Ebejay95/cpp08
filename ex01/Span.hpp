@@ -20,7 +20,6 @@ class Span {
 		unsigned int shortestSpan(void);
 		unsigned int longestSpan(void);
 
-		// Add a range of numbers using iterators
 		template <typename Iterator>
 		void addRange(Iterator begin, Iterator end);
 };
